@@ -1653,7 +1653,7 @@
                     <span class="step-number">03</span>
                     <span class="step-icon"><i class="fas fa-paper-plane"></i></span>
                     <h3>Apply & Get Hired</h3>
-                    <p>Submit your application with work samples and get a response.</p>
+                    <p>Submit your application with your CV/Resume and get a response.</p>
                 </div>
             </div>
         </div>
@@ -1946,7 +1946,7 @@
     </div>
 
     <!-- ==========================================
-    APPLICATION MODAL
+    APPLICATION MODAL (UPDATED - CV/Resume only)
     ========================================== -->
     <div class="apply-modal" id="applyModal">
         <div class="apply-modal-content">
@@ -2010,12 +2010,13 @@
                     </select>
                 </div>
 
+                <!-- NEW: Upload CV / Resume -->
                 <div class="form-group">
-                    <label>Upload Work Sample <span class="required">*</span></label>
+                    <label>Upload CV / Resume <span class="required">*</span></label>
                     <div class="file-upload-wrapper">
                         <input type="file" id="applicantFile" accept=".pdf,.doc,.docx,.txt,.rtf" required />
                         <div class="file-upload-label" id="fileUploadLabel">
-                            <i class="fas fa-cloud-upload-alt"></i> Click to upload your work sample (PDF, DOC, TXT)
+                            <i class="fas fa-cloud-upload-alt"></i> Click to upload your CV / Resume (PDF, DOC, TXT)
                         </div>
                     </div>
                     <div class="file-name" id="fileName">✅ File selected: <span id="fileNameText"></span></div>
@@ -2026,13 +2027,8 @@
                     <textarea id="applicantMessage" placeholder="Tell us about your experience, skills, and why you're interested in this specific job..." required></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label>Portfolio / Additional Links</label>
-                    <input type="text" id="applicantPortfolio" placeholder="e.g. https://yourportfolio.com, https://medium.com/@you" />
-                </div>
-
                 <div class="form-note">
-                    <p><i class="fas fa-info-circle"></i> Your application will be sent to <strong>fabianwhites31@gmail.com</strong>. We'll review your work sample and experience, then get back to you within 24-48 hours.</p>
+                    <p><i class="fas fa-info-circle"></i> Your application will be sent to <strong>fabianwhites31@gmail.com</strong>. We'll review your CV/Resume and experience, then get back to you within 24-48 hours.</p>
                 </div>
 
                 <button type="submit" class="btn-submit-application">
@@ -2050,7 +2046,7 @@
                     <p><strong>Email:</strong> <span id="successEmail">john@email.com</span></p>
                     <p><strong>Experience:</strong> <span id="successExperience">3-5 years</span></p>
                     <p><strong>Niche:</strong> <span id="successNiche">Blog Writing</span></p>
-                    <p><strong>Work Sample:</strong> <span id="successFile">filename.pdf</span></p>
+                    <p><strong>CV/Resume:</strong> <span id="successFile">filename.pdf</span></p>
                 </div>
                 <p style="font-size: 14px; color: var(--gray);">
                     <i class="fas fa-clock"></i> We'll review your application and respond within 24-48 hours.
@@ -2386,7 +2382,6 @@
             const experience = document.getElementById('applicantExperience').value;
             const niche = document.getElementById('applicantNiche').value;
             const message = document.getElementById('applicantMessage').value.trim();
-            const portfolio = document.getElementById('applicantPortfolio').value.trim();
             const fileInput = document.getElementById('applicantFile');
             const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file uploaded';
             
@@ -2396,7 +2391,7 @@
             }
             
             if (fileInput.files.length === 0) {
-                alert('Please upload a work sample (PDF, DOC, or TXT file).');
+                alert('Please upload your CV / Resume (PDF, DOC, or TXT file).');
                 return;
             }
             
@@ -2419,8 +2414,7 @@
         Phone: ${phone}
         Years of Experience: ${experience}
         Writing Niche: ${niche}
-        Portfolio: ${portfolio || 'Not provided'}
-        Work Sample: ${fileName} (attached)
+        CV/Resume: ${fileName} (attached)
         
         APPLICATION MESSAGE:
         -------------------
