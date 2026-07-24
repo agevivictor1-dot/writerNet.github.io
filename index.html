@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WriterNet - Connect. Write. Earn.</title>
+    <title>WriterNet - Find Writing Jobs</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
@@ -54,7 +54,7 @@
         }
 
         /* ============================================
-                   COLORS (Brand Palette)
+                   COLORS
                    ============================================ */
         :root {
             --navy: #0A192F;
@@ -65,6 +65,7 @@
             --gray: #8892B0;
             --dark: #1A202C;
             --green: #48BB78;
+            --red: #E53E3E;
             --shadow: 0 10px 40px rgba(10, 25, 47, 0.10);
             --radius: 12px;
             --transition: all 0.3s ease;
@@ -131,48 +132,55 @@
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.40);
         }
 
-        .btn-outline {
+        .btn-apply {
             display: inline-block;
-            background: transparent;
-            color: var(--teal);
-            font-weight: 600;
-            padding: 12px 28px;
+            background: var(--teal);
+            color: var(--navy);
+            font-weight: 700;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 14px;
-            border: 2px solid var(--teal);
+            font-size: 13px;
             transition: var(--transition);
+            border: none;
             cursor: pointer;
             font-family: 'Inter', sans-serif;
+            width: 100%;
+            text-align: center;
         }
 
-        .btn-outline:hover {
+        .btn-apply:hover {
+            background: #4dd4b8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+        }
+
+        .btn-apply i {
+            margin-right: 6px;
+        }
+
+        .btn-submit-application {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+        }
+
+        .btn-submit-application:hover {
             background: var(--teal);
             color: var(--navy);
             transform: translateY(-2px);
         }
 
-        .btn-gold-outline {
-            display: inline-block;
-            background: transparent;
-            color: var(--gold);
-            font-weight: 600;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 14px;
-            border: 2px solid var(--gold);
-            transition: var(--transition);
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn-gold-outline:hover {
-            background: var(--gold);
-            color: var(--navy);
-            transform: translateY(-2px);
-        }
-
         /* ============================================
-                   HEADER / NAVIGATION
+                   HEADER
                    ============================================ */
         header {
             background: var(--navy);
@@ -256,7 +264,6 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
             color: var(--white);
@@ -265,32 +272,19 @@
         }
 
         /* ============================================
-                   HERO SECTION WITH VIDEO/IMAGE BACKGROUND
+                   HERO SECTION
                    ============================================ */
         .hero {
             background: var(--navy);
             padding: 80px 0 100px 0;
             position: relative;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
         }
 
-        /* Hero Background Image */
         .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        /* Hero Background Video */
-        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
@@ -323,14 +317,14 @@
         .hero-content h1 {
             font-family: 'Poppins', sans-serif;
             font-weight: 900;
-            font-size: 52px;
+            font-size: 48px;
             color: var(--white);
             line-height: 1.15;
             margin-bottom: 20px;
         }
 
         .hero-content h1 span {
-            color: var(--teal);
+            color: var(--gold);
         }
 
         .hero-content p {
@@ -378,10 +372,6 @@
             transition: var(--transition);
         }
 
-        .hero-image:hover {
-            transform: scale(1.02);
-        }
-
         /* ============================================
                    SECTION TITLES
                    ============================================ */
@@ -405,12 +395,8 @@
             margin: 0 auto;
         }
 
-        .section-title .highlight {
-            color: var(--teal);
-        }
-
         /* ============================================
-                   HOW IT WORKS WITH IMAGES
+                   HOW IT WORKS
                    ============================================ */
         .how-it-works {
             padding: 80px 0;
@@ -430,22 +416,12 @@
             border-radius: var(--radius);
             transition: var(--transition);
             border: 1px solid transparent;
-            overflow: hidden;
         }
 
         .step-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow);
             border-color: var(--teal);
-        }
-
-        .step-card .step-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 16px;
-            border: 3px solid var(--teal);
         }
 
         .step-card .step-number {
@@ -479,84 +455,7 @@
         }
 
         /* ============================================
-                   FOR WRITERS / FOR CLIENTS WITH IMAGES
-                   ============================================ */
-        .dual-section {
-            padding: 80px 0;
-            background: var(--off-white);
-        }
-
-        .dual-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-
-        .dual-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 48px 40px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-top: 4px solid var(--teal);
-            overflow: hidden;
-        }
-
-        .dual-card:last-child {
-            border-top-color: var(--gold);
-        }
-
-        .dual-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .dual-card .card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: var(--radius);
-            margin-bottom: 20px;
-        }
-
-        .dual-card .card-icon {
-            font-size: 44px;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .dual-card h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 26px;
-            color: var(--navy);
-            margin-bottom: 16px;
-        }
-
-        .dual-card ul {
-            margin-bottom: 28px;
-        }
-
-        .dual-card ul li {
-            padding: 8px 0;
-            color: var(--dark);
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .dual-card ul li i {
-            color: var(--teal);
-            font-size: 18px;
-            width: 24px;
-        }
-
-        .dual-card:last-child ul li i {
-            color: var(--gold);
-        }
-
-        /* ============================================
-                   JOB CARDS
+                   JOB BOARD
                    ============================================ */
         .jobs-section {
             padding: 80px 0;
@@ -577,16 +476,6 @@
             color: var(--navy);
         }
 
-        .section-header a {
-            color: var(--teal);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .section-header a:hover {
-            color: var(--navy);
-        }
-
         .job-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -599,6 +488,7 @@
             padding: 24px;
             transition: var(--transition);
             border: 1px solid transparent;
+            position: relative;
         }
 
         .job-card:hover {
@@ -630,7 +520,7 @@
         .job-card .job-stars {
             color: var(--gold);
             font-size: 14px;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         .job-card .job-stars span {
@@ -638,99 +528,247 @@
             font-weight: 400;
         }
 
-        .job-card .btn-apply {
-            display: inline-block;
-            background: var(--navy);
-            color: var(--white);
-            padding: 8px 24px;
-            border-radius: 50px;
+        .job-card .job-description {
             font-size: 14px;
-            font-weight: 600;
-            transition: var(--transition);
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .job-card .btn-apply:hover {
-            background: var(--teal);
-            color: var(--navy);
+        .job-card .job-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .job-card .job-footer .job-type {
+            font-size: 12px;
+            color: var(--gray);
+            background: var(--white);
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid #e2e8f0;
         }
 
         /* ============================================
-                   WRITER CARDS WITH IMAGES
+                   APPLICATION MODAL
                    ============================================ */
-        .writers-section {
-            padding: 80px 0;
-            background: var(--off-white);
+        .apply-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .writer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+        .apply-modal.active {
+            display: flex;
         }
 
-        .writer-card {
+        .apply-modal-content {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 28px 24px;
-            text-align: center;
-            box-shadow: var(--shadow);
+            padding: 40px;
+            max-width: 550px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalSlide 0.4s ease;
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .apply-modal-content .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .apply-modal-content .modal-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--navy);
+        }
+
+        .apply-modal-content .modal-header h3 i {
+            color: var(--teal);
+            margin-right: 8px;
+        }
+
+        .apply-modal-content .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--gray);
+            cursor: pointer;
             transition: var(--transition);
-            border: 1px solid transparent;
         }
 
-        .writer-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--gold);
+        .apply-modal-content .modal-close:hover {
+            color: var(--red);
         }
 
-        .writer-card .avatar-img {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 12px;
-            border: 3px solid var(--teal);
+        .apply-modal-content .job-preview {
+            background: var(--off-white);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--teal);
         }
 
-        .writer-card .writer-name {
+        .apply-modal-content .job-preview .job-title-preview {
             font-weight: 700;
             font-size: 18px;
             color: var(--navy);
         }
 
-        .writer-card .writer-skill {
+        .apply-modal-content .job-preview .job-rate-preview {
+            color: var(--teal);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .apply-modal-content .job-preview .job-meta-preview {
             color: var(--gray);
             font-size: 14px;
-            margin-bottom: 6px;
         }
 
-        .writer-card .writer-stars {
-            color: var(--gold);
-            font-size: 14px;
-            margin-bottom: 4px;
-        }
-
-        .writer-card .writer-rate {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--teal);
+        .apply-modal-content .form-group {
             margin-bottom: 16px;
         }
 
-        .writer-card .btn-hire {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 8px 28px;
-            border-radius: 50px;
-            font-size: 14px;
+        .apply-modal-content .form-group label {
+            display: block;
             font-weight: 600;
-            transition: var(--transition);
+            font-size: 14px;
+            color: var(--dark);
+            margin-bottom: 4px;
         }
 
-        .writer-card .btn-hire:hover {
-            background: #e6c200;
-            transform: translateY(-2px);
+        .apply-modal-content .form-group label .required {
+            color: var(--red);
+        }
+
+        .apply-modal-content .form-group input,
+        .apply-modal-content .form-group textarea,
+        .apply-modal-content .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .apply-modal-content .form-group input:focus,
+        .apply-modal-content .form-group textarea:focus,
+        .apply-modal-content .form-group select:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.15);
+        }
+
+        .apply-modal-content .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .apply-modal-content .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .apply-modal-content .form-note {
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px dashed var(--gold);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+        }
+
+        .apply-modal-content .form-note p {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .apply-modal-content .form-note p i {
+            color: var(--gold);
+            margin-right: 6px;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-message i {
+            font-size: 60px;
+            color: var(--green);
+            margin-bottom: 16px;
+        }
+
+        .success-message h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            color: var(--gray);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .success-message .success-details {
+            background: var(--off-white);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            text-align: left;
+        }
+
+        .success-message .success-details p {
+            font-size: 14px;
+            padding: 4px 0;
+        }
+
+        .success-message .success-details p strong {
+            color: var(--navy);
         }
 
         /* ============================================
@@ -800,116 +838,7 @@
         }
 
         /* ============================================
-                   TRUST / SECURITY
-                   ============================================ */
-        .trust-section {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .trust-item {
-            text-align: center;
-            padding: 24px;
-        }
-
-        .trust-item .trust-icon {
-            font-size: 44px;
-            color: var(--teal);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .trust-item h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--navy);
-            margin-bottom: 6px;
-        }
-
-        .trust-item p {
-            color: var(--gray);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* ============================================
-                   SERVICES SECTION (From Your Image)
-                   ============================================ */
-        .services-section {
-            padding: 80px 0;
-            background: var(--off-white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-bottom: 4px solid var(--teal);
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-bottom-color: var(--gold);
-        }
-
-        .service-card .service-icon {
-            font-size: 48px;
-            color: var(--teal);
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .service-card h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .service-card p {
-            color: var(--gray);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .service-card .service-list {
-            margin-top: 16px;
-            text-align: left;
-        }
-
-        .service-card .service-list li {
-            padding: 6px 0;
-            color: var(--dark);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .service-card .service-list li i {
-            color: var(--teal);
-            font-size: 14px;
-        }
-
-        /* ============================================
-                   CONTACT / SUPPORT SECTION
+                   CONTACT SECTION
                    ============================================ */
         .contact-section {
             padding: 80px 0;
@@ -1042,6 +971,7 @@
             cursor: pointer;
             transition: var(--transition);
             font-family: 'Inter', sans-serif;
+            width: 100%;
         }
 
         .contact-form .btn-submit:hover {
@@ -1075,142 +1005,12 @@
         }
 
         /* ============================================
-                   BLOG SECTION
-                   ============================================ */
-        .blog-section {
-            padding: 80px 0;
-            background: var(--off-white);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .blog-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .blog-card .blog-img {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        .blog-card .blog-body {
-            padding: 24px;
-        }
-
-        .blog-card .blog-body .blog-tag {
-            display: inline-block;
-            background: rgba(100, 255, 218, 0.15);
-            color: var(--teal);
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-bottom: 10px;
-        }
-
-        .blog-card .blog-body h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .blog-card .blog-body p {
-            color: var(--gray);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .blog-card .blog-body a {
-            color: var(--teal);
-            font-weight: 600;
-            font-size: 14px;
-            transition: var(--transition);
-        }
-
-        .blog-card .blog-body a:hover {
-            color: var(--navy);
-        }
-
-        /* ============================================
-                   CTA BANNER
-                   ============================================ */
-        .cta-banner {
-            padding: 80px 0;
-            background: var(--navy);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-banner .cta-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.1;
-        }
-
-        .cta-banner .cta-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 25, 47, 0.85);
-        }
-
-        .cta-banner .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-banner h2 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 40px;
-            color: var(--white);
-            margin-bottom: 12px;
-        }
-
-        .cta-banner p {
-            color: var(--gray);
-            font-size: 18px;
-            max-width: 500px;
-            margin: 0 auto 32px;
-        }
-
-        .cta-banner .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ============================================
                    FOOTER
                    ============================================ */
         footer {
             background: var(--navy);
             padding: 60px 0 30px 0;
-            border-top: 1px solid rgba(100, 255, 218, 0.06);
+            border-top: 1px solid rgba(100, 255, 218, 0.08);
         }
 
         .footer-grid {
@@ -1313,7 +1113,7 @@
         }
 
         /* ============================================
-                   RESPONSIVE DESIGN
+                   RESPONSIVE
                    ============================================ */
         @media (max-width: 1024px) {
             .hero-wrapper {
@@ -1333,8 +1133,7 @@
                 justify-content: center;
             }
 
-            .job-grid,
-            .writer-grid {
+            .job-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -1344,10 +1143,6 @@
 
             .contact-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -1378,22 +1173,11 @@
             }
 
             .steps-grid,
-            .dual-grid,
-            .testimonial-grid,
-            .blog-grid {
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
 
-            .job-grid,
-            .writer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .trust-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .services-grid {
+            .job-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1415,18 +1199,6 @@
                 font-size: 28px;
             }
 
-            .cta-banner h2 {
-                font-size: 30px;
-            }
-
-            .dual-card {
-                padding: 32px 24px;
-            }
-
-            .footer-col .support-item {
-                justify-content: center;
-            }
-
             .contact-form {
                 padding: 24px;
             }
@@ -1434,6 +1206,20 @@
             .hero-image {
                 max-height: 300px;
                 object-fit: cover;
+            }
+
+            .apply-modal-content {
+                padding: 24px;
+                margin: 10px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .job-card .job-footer {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
 
@@ -1456,10 +1242,6 @@
                 display: none;
             }
 
-            .trust-grid {
-                grid-template-columns: 1fr;
-            }
-
             .section-header {
                 flex-direction: column;
                 gap: 8px;
@@ -1471,7 +1253,7 @@
 <body>
 
     <!-- ==========================================
-    HEADER / NAVIGATION
+    HEADER
     ========================================== -->
     <header>
         <div class="container header-wrapper">
@@ -1480,16 +1262,15 @@
             </a>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#jobs">Find Jobs</a></li>
-                <li><a href="#writers">Writers</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
             <div class="nav-actions">
                 <a href="#" class="login">Log In</a>
-                <a href="#" class="btn-signup">Get Started</a>
+                <a href="#jobs" class="btn-signup">Find Jobs</a>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -1498,41 +1279,40 @@
     </header>
 
     <!-- ==========================================
-    HERO SECTION WITH IMAGE
+    HERO SECTION
     ========================================== -->
     <section class="hero">
-        <!-- Background Image -->
         <img 
             src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1600&q=80" 
-            alt="Writer working on laptop" 
+            alt="Writer working" 
             class="hero-bg"
         />
         <div class="hero-overlay"></div>
 
         <div class="container hero-wrapper">
             <div class="hero-content">
-                <h1>Find Writing Jobs.<br />Connect with <span>Clients</span>.<br />Build Your Career.</h1>
+                <h1>Find Your Next <br /><span>Writing Job</span> Today.</h1>
                 <p>
-                    Join WriterNet — the professional network connecting freelance writers
-                    with paying clients worldwide. Free to join. Start earning today.
+                    Browse hundreds of premium writing jobs from top clients worldwide.
+                    See full job details, rates, and requirements — then apply directly.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#jobs" class="btn-primary"><i class="fas fa-rocket"></i> Find Jobs</a>
-                    <a href="#" class="btn-secondary"><i class="fas fa-user-plus"></i> Join Free</a>
+                    <a href="#jobs" class="btn-primary"><i class="fas fa-briefcase"></i> Browse Jobs</a>
+                    <a href="#how-it-works" class="btn-secondary"><i class="fas fa-info-circle"></i> How It Works</a>
                 </div>
                 <div class="trust-badge">
-                    <span><i class="fas fa-check-circle"></i> <strong>5,000+</strong> Writers</span>
+                    <span><i class="fas fa-check-circle"></i> <strong>500+</strong> Active Jobs</span>
                     <span class="divider"></span>
-                    <span><i class="fas fa-check-circle"></i> <strong>1,500+</strong> Businesses</span>
+                    <span><i class="fas fa-check-circle"></i> <strong>200+</strong> Companies</span>
                     <span class="divider"></span>
-                    <span><i class="fas fa-star" style="color: var(--gold);"></i> 4.8/5 Rating</span>
+                    <span><i class="fas fa-star" style="color: var(--gold);"></i> 4.9/5 Rating</span>
                 </div>
             </div>
 
             <div>
                 <img 
                     src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&q=80" 
-                    alt="Person working on laptop" 
+                    alt="Working on laptop" 
                     class="hero-image"
                 />
             </div>
@@ -1542,284 +1322,191 @@
     <!-- ==========================================
     HOW IT WORKS
     ========================================== -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-title">
                 <h2>How It Works</h2>
-                <p>Three simple steps to start your freelancing journey on WriterNet.</p>
+                <p>Three simple steps to find your next writing job.</p>
             </div>
 
             <div class="steps-grid">
                 <div class="step-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&q=80" 
-                        alt="Writing" 
-                        class="step-image"
-                    />
                     <span class="step-number">01</span>
-                    <h3>Create Your Profile</h3>
-                    <p>Sign up for free, showcase your skills, portfolio, and set your rates.</p>
+                    <span class="step-icon"><i class="fas fa-search"></i></span>
+                    <h3>Browse Jobs</h3>
+                    <p>Explore hundreds of writing jobs from top companies worldwide.</p>
                 </div>
 
                 <div class="step-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=200&q=80" 
-                        alt="Searching for jobs" 
-                        class="step-image"
-                    />
                     <span class="step-number">02</span>
-                    <h3>Find or Post Jobs</h3>
-                    <p>Browse hundreds of writing gigs or post your own project and get matched.</p>
+                    <span class="step-icon"><i class="fas fa-paper-plane"></i></span>
+                    <h3>Apply Online</h3>
+                    <p>Fill out the application form with your details and experience.</p>
                 </div>
 
                 <div class="step-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&q=80" 
-                        alt="Getting paid" 
-                        class="step-image"
-                    />
                     <span class="step-number">03</span>
-                    <h3>Get Paid</h3>
-                    <p>Complete the work, client approves, and funds are released instantly.</p>
+                    <span class="step-icon"><i class="fas fa-envelope-open-text"></i></span>
+                    <h3>Get Response</h3>
+                    <p>We review your application and respond within 24-48 hours.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================
-    SERVICES SECTION (From Your Image)
-    ========================================== -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>✍️ Freelance Writing Services</h2>
-                <p>Quality words. Powerful impact.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon"><i class="fas fa-newspaper"></i></span>
-                    <h3>Articles & Blogs</h3>
-                    <p>Engaging, well-researched articles and blog posts that inform and convert.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle"></i> SEO Optimized</li>
-                        <li><i class="fas fa-check-circle"></i> 100% Original</li>
-                        <li><i class="fas fa-check-circle"></i> On-Time Delivery</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon"><i class="fas fa-graduation-cap"></i></span>
-                    <h3>Academic Writing</h3>
-                    <p>Essays, research papers, and academic content that meets high standards.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle"></i> Well Researched</li>
-                        <li><i class="fas fa-check-circle"></i> Proper Citations</li>
-                        <li><i class="fas fa-check-circle"></i> Plagiarism Free</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon"><i class="fas fa-globe"></i></span>
-                    <h3>Website Content</h3>
-                    <p>Compelling website copy that captures your brand voice and drives results.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle"></i> Clear & Concise</li>
-                        <li><i class="fas fa-check-circle"></i> SEO Friendly</li>
-                        <li><i class="fas fa-check-circle"></i> Engaging Content</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon"><i class="fas fa-edit"></i></span>
-                    <h3>Editing & Proofreading</h3>
-                    <p>Polished, error-free content with unlimited revisions until you're satisfied.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle"></i> Grammar Check</li>
-                        <li><i class="fas fa-check-circle"></i> Style Enhancement</li>
-                        <li><i class="fas fa-check-circle"></i> Unlimited Revisions</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon"><i class="fas fa-feather-alt"></i></span>
-                    <h3>Creative Writing</h3>
-                    <p>Stories, poetry, and creative content that brings your ideas to life.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle"></i> Unique Voice</li>
-                        <li><i class="fas fa-check-circle"></i> Creative Style</li>
-                        <li><i class="fas fa-check-circle"></i> Engaging Narrative</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon"><i class="fas fa-file-alt"></i></span>
-                    <h3>Content Solutions</h3>
-                    <p>Custom content solutions tailored to your specific needs and audience.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check-circle"></i> Engaging Content</li>
-                        <li><i class="fas fa-check-circle"></i> Clear & Concise</li>
-                        <li><i class="fas fa-check-circle"></i> 100% Original</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-    FOR WRITERS / FOR CLIENTS
-    ========================================== -->
-    <section class="dual-section" id="clients">
-        <div class="container">
-            <div class="dual-grid">
-                <!-- For Writers -->
-                <div class="dual-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" 
-                        alt="Writers working together" 
-                        class="card-image"
-                    />
-                    <span class="card-icon"><i class="fas fa-feather-alt"></i></span>
-                    <h3>For Writers</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Access hundreds of writing jobs</li>
-                        <li><i class="fas fa-check-circle"></i> Build your portfolio with real projects</li>
-                        <li><i class="fas fa-check-circle"></i> Set your own rates and work schedule</li>
-                        <li><i class="fas fa-check-circle"></i> Work from anywhere in the world</li>
-                        <li><i class="fas fa-check-circle"></i> Get paid securely via escrow</li>
-                    </ul>
-                    <a href="#" class="btn-primary"><i class="fas fa-user-plus"></i> Join as a Writer</a>
-                </div>
-
-                <!-- For Clients -->
-                <div class="dual-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" 
-                        alt="Team working together" 
-                        class="card-image"
-                    />
-                    <span class="card-icon"><i class="fas fa-building"></i></span>
-                    <h3>For Clients</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Access vetted, professional writers</li>
-                        <li><i class="fas fa-check-circle"></i> Escrow payment protection</li>
-                        <li><i class="fas fa-check-circle"></i> Quality guaranteed on every project</li>
-                        <li><i class="fas fa-check-circle"></i> Post unlimited jobs for free</li>
-                        <li><i class="fas fa-check-circle"></i> 24/7 dedicated support team</li>
-                    </ul>
-                    <a href="#" class="btn-secondary"><i class="fas fa-briefcase"></i> Hire Writers Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-    TRENDING JOBS
+    JOB BOARD
     ========================================== -->
     <section class="jobs-section" id="jobs">
         <div class="container">
             <div class="section-header">
-                <h2><i class="fas fa-fire" style="color: var(--gold);"></i> Trending Writing Jobs</h2>
-                <a href="#">View All Jobs →</a>
+                <h2><i class="fas fa-briefcase" style="color: var(--teal);"></i> Available Writing Jobs</h2>
+                <span style="color: var(--gray); font-size: 14px;">Updated daily</span>
             </div>
 
             <div class="job-grid">
+                <!-- Job 1 -->
                 <div class="job-card">
                     <div class="job-title">Blog Writer</div>
                     <div class="job-meta">Remote • Full-time</div>
                     <div class="job-rate">$50 / post</div>
                     <div class="job-stars">★★★★☆ <span>(24 reviews)</span></div>
-                    <a href="#" class="btn-apply">Apply Now</a>
+                    <div class="job-description">
+                        We're looking for a talented blog writer to create engaging content for our lifestyle blog. 
+                        Topics include travel, wellness, and personal development.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">📝 Blog</span>
+                        <button class="btn-apply" onclick="openApplyModal('Blog Writer', '$50/post', 'Remote • Full-time')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
 
+                <!-- Job 2 -->
                 <div class="job-card">
-                    <div class="job-title">SEO Writer</div>
+                    <div class="job-title">SEO Content Writer</div>
                     <div class="job-meta">Remote • Part-time</div>
                     <div class="job-rate">$40 / hr</div>
                     <div class="job-stars">★★★★★ <span>(18 reviews)</span></div>
-                    <a href="#" class="btn-apply">Apply Now</a>
+                    <div class="job-description">
+                        We need an SEO-savvy writer to create optimized content for our tech blog. 
+                        Must understand keyword research and on-page SEO best practices.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">📈 SEO</span>
+                        <button class="btn-apply" onclick="openApplyModal('SEO Content Writer', '$40/hr', 'Remote • Part-time')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
 
+                <!-- Job 3 -->
                 <div class="job-card">
                     <div class="job-title">Copywriter</div>
                     <div class="job-meta">Remote • Freelance</div>
                     <div class="job-rate">$60 / hr</div>
                     <div class="job-stars">★★★★☆ <span>(31 reviews)</span></div>
-                    <a href="#" class="btn-apply">Apply Now</a>
+                    <div class="job-description">
+                        Join our team as a copywriter creating compelling marketing copy for 
+                        SaaS brands. Must have experience with email campaigns and landing pages.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">✍️ Copy</span>
+                        <button class="btn-apply" onclick="openApplyModal('Copywriter', '$60/hr', 'Remote • Freelance')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
 
+                <!-- Job 4 -->
                 <div class="job-card">
                     <div class="job-title">Technical Writer</div>
                     <div class="job-meta">Remote • Contract</div>
                     <div class="job-rate">$55 / hr</div>
                     <div class="job-stars">★★★★★ <span>(12 reviews)</span></div>
-                    <a href="#" class="btn-apply">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-    TOP WRITERS WITH REAL PHOTOS
-    ========================================== -->
-    <section class="writers-section" id="writers">
-        <div class="container">
-            <div class="section-header">
-                <h2><i class="fas fa-trophy" style="color: var(--gold);"></i> Top-Rated Writers</h2>
-                <a href="#">View All Writers →</a>
-            </div>
-
-            <div class="writer-grid">
-                <div class="writer-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" 
-                        alt="Jane M." 
-                        class="avatar-img"
-                    />
-                    <div class="writer-name">Jane M.</div>
-                    <div class="writer-skill">SEO Expert • 5 years</div>
-                    <div class="writer-stars">★★★★★</div>
-                    <div class="writer-rate">$40 / hr</div>
-                    <a href="#" class="btn-hire">Hire Me</a>
+                    <div class="job-description">
+                        We're hiring a technical writer to create documentation, API guides, 
+                        and user manuals for our software products.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">💻 Tech</span>
+                        <button class="btn-apply" onclick="openApplyModal('Technical Writer', '$55/hr', 'Remote • Contract')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
 
-                <div class="writer-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" 
-                        alt="Mark T." 
-                        class="avatar-img"
-                    />
-                    <div class="writer-name">Mark T.</div>
-                    <div class="writer-skill">Copywriter • 7 years</div>
-                    <div class="writer-stars">★★★★☆</div>
-                    <div class="writer-rate">$55 / hr</div>
-                    <a href="#" class="btn-hire">Hire Me</a>
+                <!-- Job 5 -->
+                <div class="job-card">
+                    <div class="job-title">Ghostwriter</div>
+                    <div class="job-meta">Remote • Freelance</div>
+                    <div class="job-rate">$70 / hr</div>
+                    <div class="job-stars">★★★★☆ <span>(9 reviews)</span></div>
+                    <div class="job-description">
+                        Seeking an experienced ghostwriter for a leadership book project. 
+                        Must have experience writing in the business/leadership niche.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">📖 Ghost</span>
+                        <button class="btn-apply" onclick="openApplyModal('Ghostwriter', '$70/hr', 'Remote • Freelance')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
 
-                <div class="writer-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" 
-                        alt="Sarah K." 
-                        class="avatar-img"
-                    />
-                    <div class="writer-name">Sarah K.</div>
-                    <div class="writer-skill">Blog Writer • 4 years</div>
-                    <div class="writer-stars">★★★★★</div>
-                    <div class="writer-rate">$35 / hr</div>
-                    <a href="#" class="btn-hire">Hire Me</a>
+                <!-- Job 6 -->
+                <div class="job-card">
+                    <div class="job-title">Social Media Writer</div>
+                    <div class="job-meta">Remote • Part-time</div>
+                    <div class="job-rate">$35 / hr</div>
+                    <div class="job-stars">★★★★☆ <span>(14 reviews)</span></div>
+                    <div class="job-description">
+                        Create engaging social media captions, threads, and content calendars 
+                        for a growing lifestyle brand across Instagram, Twitter, and LinkedIn.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">📱 Social</span>
+                        <button class="btn-apply" onclick="openApplyModal('Social Media Writer', '$35/hr', 'Remote • Part-time')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
 
-                <div class="writer-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" 
-                        alt="David O." 
-                        class="avatar-img"
-                    />
-                    <div class="writer-name">David O.</div>
-                    <div class="writer-skill">Tech Writer • 6 years</div>
-                    <div class="writer-stars">★★★★☆</div>
-                    <div class="writer-rate">$60 / hr</div>
-                    <a href="#" class="btn-hire">Hire Me</a>
+                <!-- Job 7 -->
+                <div class="job-card">
+                    <div class="job-title">Product Description Writer</div>
+                    <div class="job-meta">Remote • Full-time</div>
+                    <div class="job-rate">$45 / hr</div>
+                    <div class="job-stars">★★★★★ <span>(22 reviews)</span></div>
+                    <div class="job-description">
+                        Write compelling product descriptions for an e-commerce store. 
+                        Must be able to write persuasive copy that drives conversions.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">🛍️ Ecom</span>
+                        <button class="btn-apply" onclick="openApplyModal('Product Description Writer', '$45/hr', 'Remote • Full-time')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Job 8 -->
+                <div class="job-card">
+                    <div class="job-title">Newsletter Writer</div>
+                    <div class="job-meta">Remote • Freelance</div>
+                    <div class="job-rate">$50 / hr</div>
+                    <div class="job-stars">★★★★☆ <span>(16 reviews)</span></div>
+                    <div class="job-description">
+                        Create weekly newsletters for a finance and investing publication. 
+                        Must be able to simplify complex topics for a general audience.
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-type">📧 Newsletter</span>
+                        <button class="btn-apply" onclick="openApplyModal('Newsletter Writer', '$50/hr', 'Remote • Freelance')">
+                            <i class="fas fa-paper-plane"></i> Apply Now
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1828,23 +1515,23 @@
     <!-- ==========================================
     TESTIMONIALS
     ========================================== -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>💬 Real Stories from Real Members</h2>
-                <p>Hear what our writers and clients have to say about WriterNet.</p>
+                <h2>💬 What Our Writers Say</h2>
+                <p>Real stories from freelancers who found jobs through WriterNet.</p>
             </div>
 
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="quote">
                         <i class="fas fa-quote-left"></i>
-                        WriterNet helped me find consistent writing work and I've doubled my income in 6 months.
+                        I found my dream writing job within a week! The application process was so smooth.
                     </div>
                     <div class="author">
                         <img 
                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" 
-                            alt="Jane M." 
+                            alt="Jane" 
                             class="avatar-img-sm"
                         />
                         <div>
@@ -1857,12 +1544,12 @@
                 <div class="testimonial-card">
                     <div class="quote">
                         <i class="fas fa-quote-left"></i>
-                        We found an amazing content writer who perfectly understands our brand voice.
+                        WriterNet connected me with amazing clients. I've never been busier!
                     </div>
                     <div class="author">
                         <img 
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" 
-                            alt="Mark T." 
+                            alt="Mark" 
                             class="avatar-img-sm"
                         />
                         <div>
@@ -1875,12 +1562,12 @@
                 <div class="testimonial-card">
                     <div class="quote">
                         <i class="fas fa-quote-left"></i>
-                        I love how easy it is to find and hire writers. The escrow system gives us peace of mind.
+                        The jobs are high-quality and well-paying. I highly recommend WriterNet!
                     </div>
                     <div class="author">
                         <img 
                             src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" 
-                            alt="Sarah K." 
+                            alt="Sarah" 
                             class="avatar-img-sm"
                         />
                         <div>
@@ -1894,57 +1581,19 @@
     </section>
 
     <!-- ==========================================
-    TRUST & SECURITY
-    ========================================== -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Secure. Reliable. Trusted.</h2>
-                <p>Your safety and success are our top priorities.</p>
-            </div>
-
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <span class="trust-icon"><i class="fas fa-lock"></i></span>
-                    <h4>Escrow Payments</h4>
-                    <p>Your money is held securely until work is approved by the client.</p>
-                </div>
-
-                <div class="trust-item">
-                    <span class="trust-icon"><i class="fas fa-shield-alt"></i></span>
-                    <h4>Vetted Writers</h4>
-                    <p>Every writer is reviewed and rated by real clients before joining.</p>
-                </div>
-
-                <div class="trust-item">
-                    <span class="trust-icon"><i class="fas fa-handshake"></i></span>
-                    <h4>Dispute Resolution</h4>
-                    <p>Fair and transparent handling of any conflicts between parties.</p>
-                </div>
-
-                <div class="trust-item">
-                    <span class="trust-icon"><i class="fas fa-globe-africa"></i></span>
-                    <h4>Global Reach</h4>
-                    <p>Connect with writers and clients from all around the world.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-    CONTACT / SUPPORT SECTION
+    CONTACT SECTION
     ========================================== -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>📬 Get in Touch</h2>
-                <p>Have questions? We're here to help you 24/7.</p>
+                <p>Have questions? Reach out to us anytime.</p>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>Reach out to us through any of the channels below and we'll get back to you as soon as possible.</p>
+                    <p>Reach out to us through any of the channels below.</p>
 
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -1970,34 +1619,26 @@
                         </div>
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
-                        <div class="contact-text">
-                            <strong>Support Hours</strong>
-                            24/7 — We're always here for you
-                        </div>
-                    </div>
-
                     <br />
-                    <a href="https://wa.me/254752330598?text=Hi%20I%20want%20to%20join%20WriterNet" class="btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/254752330598?text=Hi%20I%20have%20a%20question%20about%20a%20job" class="btn-whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
 
                 <div class="contact-form">
                     <h4>Send Us a Message</h4>
-                    <form>
+                    <form action="mailto:fabianwhites31@gmail.com" method="POST" enctype="text/plain">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="Enter your full name" />
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" placeholder="Enter your email address" />
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" placeholder="Tell us how we can help you..."></textarea>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
                         </div>
                         <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
@@ -2007,80 +1648,95 @@
     </section>
 
     <!-- ==========================================
-    BLOG SECTION
+    APPLICATION MODAL
     ========================================== -->
-    <section class="blog-section" id="blog">
-        <div class="container">
-            <div class="section-header">
-                <h2>📚 Tips for Freelance Writers</h2>
-                <a href="#">Visit Blog →</a>
+    <div class="apply-modal" id="applyModal">
+        <div class="apply-modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-paper-plane"></i> Apply for This Job</h3>
+                <button class="modal-close" onclick="closeApplyModal()">&times;</button>
             </div>
 
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80" 
-                        alt="Writing tips" 
-                        class="blog-img"
-                    />
-                    <div class="blog-body">
-                        <span class="blog-tag">Career</span>
-                        <h4>5 Tips to Land Your First Freelance Writing Gig</h4>
-                        <p>Starting your freelancing journey? Here's how to land your first client and build momentum.</p>
-                        <a href="#">Read More →</a>
+            <!-- Job Preview -->
+            <div class="job-preview" id="jobPreview">
+                <div class="job-title-preview" id="modalJobTitle">Blog Writer</div>
+                <div class="job-rate-preview" id="modalJobRate">$50 / post</div>
+                <div class="job-meta-preview" id="modalJobMeta">Remote • Full-time</div>
+            </div>
+
+            <!-- Application Form -->
+            <form id="applicationForm" onsubmit="submitApplication(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" id="applicantName" placeholder="e.g. John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" id="applicantEmail" placeholder="you@email.com" required />
                     </div>
                 </div>
 
-                <div class="blog-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=600&q=80" 
-                        alt="Pricing strategies" 
-                        class="blog-img"
-                    />
-                    <div class="blog-body">
-                        <span class="blog-tag">Pricing</span>
-                        <h4>How to Set Your Rates as a New Freelancer</h4>
-                        <p>Pricing your work can be tough. Learn how to value your skills and earn what you deserve.</p>
-                        <a href="#">Read More →</a>
-                    </div>
+                <div class="form-group">
+                    <label>Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="applicantPhone" placeholder="e.g. +254 712 345 678" required />
                 </div>
 
-                <div class="blog-card">
-                    <img 
-                        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" 
-                        alt="SEO writing" 
-                        class="blog-img"
-                    />
-                    <div class="blog-body">
-                        <span class="blog-tag">SEO</span>
-                        <h4>SEO for Beginners: Write Content That Ranks</h4>
-                        <p>Master the basics of SEO writing and create content that drives traffic and results.</p>
-                        <a href="#">Read More →</a>
-                    </div>
+                <div class="form-group">
+                    <label>Years of Experience</label>
+                    <select id="applicantExperience">
+                        <option value="0-1">0-1 year</option>
+                        <option value="1-3">1-3 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
                 </div>
+
+                <div class="form-group">
+                    <label>Why are you a good fit for this role? <span class="required">*</span></label>
+                    <textarea id="applicantMessage" placeholder="Tell us about your experience, skills, and why you're interested..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Portfolio / Writing Samples (Links)</label>
+                    <input type="text" id="applicantPortfolio" placeholder="e.g. https://yourportfolio.com or https://medium.com/@you" />
+                </div>
+
+                <div class="form-note">
+                    <p><i class="fas fa-info-circle"></i> Your application will be sent directly to our hiring team. We'll review it and get back to you within 24-48 hours.</p>
+                </div>
+
+                <button type="submit" class="btn-submit-application">
+                    <i class="fas fa-paper-plane"></i> Submit Application
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <h3>Application Submitted!</h3>
+                <p>Your application has been sent successfully.</p>
+                <div class="success-details">
+                    <p><strong>Job:</strong> <span id="successJobTitle">Blog Writer</span></p>
+                    <p><strong>Applicant:</strong> <span id="successName">John Doe</span></p>
+                    <p><strong>Email:</strong> <span id="successEmail">john@email.com</span></p>
+                </div>
+                <p style="font-size: 14px; color: var(--gray);">
+                    <i class="fas fa-clock"></i> We'll review your application and respond within 24-48 hours.
+                </p>
+                <br />
+                <button class="btn-close-modal" onclick="closeApplyModal()" style="background: var(--navy); color: white; padding: 12px 36px; border-radius: 50px; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600;">
+                    Close
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ==========================================
-    CTA BANNER WITH IMAGE BACKGROUND
-    ========================================== -->
-    <section class="cta-banner">
-        <img 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80" 
-            alt="Team working" 
-            class="cta-bg"
-        />
-        <div class="cta-overlay"></div>
-        <div class="container">
-            <h2>Ready to Start Your Freelance Journey?</h2>
-            <p>Join thousands of writers and clients already growing on WriterNet.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn-primary"><i class="fas fa-user-plus"></i> Join for Free</a>
-                <a href="#" class="btn-gold-outline"><i class="fas fa-briefcase"></i> Post a Job</a>
-            </div>
-        </div>
-    </section>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/254752330598?text=Hi%20I%20have%20a%20question%20about%20a%20job" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- ==========================================
     FOOTER
@@ -2092,7 +1748,7 @@
                     <a href="#" class="logo">
                         <i class="fas fa-pen-fancy"></i> Writer<span>Net</span>
                     </a>
-                    <p>Connect. Write. Earn. The professional network for freelance writers worldwide.</p>
+                    <p>Find your next writing job. Browse, apply, and start earning today.</p>
                     <br />
                     <p style="font-size: 13px; color: var(--gray);">
                         <i class="fas fa-envelope" style="color: var(--teal);"></i> fabianwhites31@gmail.com<br />
@@ -2101,27 +1757,11 @@
                 </div>
 
                 <div class="footer-col">
-                    <h5>For Writers</h5>
-                    <a href="#">How It Works</a>
-                    <a href="#">Sign Up</a>
-                    <a href="#">Writing Tips</a>
-                    <a href="#">Success Stories</a>
-                </div>
-
-                <div class="footer-col">
-                    <h5>For Clients</h5>
-                    <a href="#">Post a Job</a>
-                    <a href="#">Hire Writers</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">Client Testimonials</a>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Company</h5>
-                    <a href="#">About Us</a>
-                    <a href="#blog">Blog</a>
+                    <h5>Quick Links</h5>
+                    <a href="#jobs">Browse Jobs</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
-                    <a href="#">FAQ</a>
                 </div>
 
                 <div class="footer-col">
@@ -2138,36 +1778,31 @@
                         <i class="fab fa-whatsapp"></i>
                         <a href="https://wa.me/254752330598" target="_blank">WhatsApp</a>
                     </div>
-                    <br />
-                    <a href="https://wa.me/254752330598?text=Hi%20I%20want%20to%20join%20WriterNet" class="btn-whatsapp" style="padding: 8px 20px; font-size: 13px;" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Chat Now
-                    </a>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <div class="footer-socials" style="justify-content: flex-start; margin-top: 8px;">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/254752330598" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 WriterNet. All rights reserved. | <span class="owner-name">Agevi Victor</span></p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/254752330598" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/254752330598?text=Hi%20I%20want%20to%20join%20WriterNet" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <!-- ==========================================
-    JAVASCRIPT FOR MOBILE MENU
+    JAVASCRIPT
     ========================================== -->
     <script>
+        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -2175,12 +1810,113 @@
             navLinks.classList.toggle('open');
         });
 
-        // Close menu when a link is clicked (mobile)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('open');
             });
         });
+
+        // Application Modal Functions
+        let currentJob = {};
+
+        function openApplyModal(title, rate, meta) {
+            currentJob = { title, rate, meta };
+            
+            document.getElementById('modalJobTitle').textContent = title;
+            document.getElementById('modalJobRate').textContent = rate;
+            document.getElementById('modalJobMeta').textContent = meta;
+            
+            document.getElementById('applyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Reset form
+            document.getElementById('applicationForm').style.display = 'block';
+            document.getElementById('successMessage').classList.remove('active');
+            document.getElementById('applicationForm').reset();
+        }
+
+        function closeApplyModal() {
+            document.getElementById('applyModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('applyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeApplyModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeApplyModal();
+            }
+        });
+
+        // Submit Application
+        function submitApplication(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('applicantName').value.trim();
+            const email = document.getElementById('applicantEmail').value.trim();
+            const phone = document.getElementById('applicantPhone').value.trim();
+            const experience = document.getElementById('applicantExperience').value;
+            const message = document.getElementById('applicantMessage').value.trim();
+            const portfolio = document.getElementById('applicantPortfolio').value.trim();
+            
+            // Validate required fields
+            if (!name || !email || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Build email body
+            const subject = `Job Application: ${currentJob.title}`;
+            const body = `
+        ============================================
+        NEW JOB APPLICATION - WriterNet
+        ============================================
+        
+        JOB DETAILS:
+        ------------
+        Job Title: ${currentJob.title}
+        Rate: ${currentJob.rate}
+        Type: ${currentJob.meta}
+        
+        APPLICANT DETAILS:
+        -----------------
+        Full Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Experience: ${experience}
+        
+        APPLICATION MESSAGE:
+        -------------------
+        ${message}
+        
+        PORTFOLIO LINK:
+        ---------------
+        ${portfolio || 'Not provided'}
+        
+        ============================================
+        Respond to this applicant at: ${email}
+        ============================================
+            `;
+            
+            // Send email via mailto
+            const mailtoLink = `mailto:fabianwhites31@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+            document.getElementById('successJobTitle').textContent = currentJob.title;
+            document.getElementById('successName').textContent = name;
+            document.getElementById('successEmail').textContent = email;
+        }
     </script>
 
 </body>
