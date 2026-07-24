@@ -179,6 +179,25 @@
             transform: translateY(-2px);
         }
 
+        .btn-logout {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-logout:hover {
+            background: #c53030;
+            transform: translateY(-2px);
+        }
+
         /* ============================================
                    HEADER
                    ============================================ */
@@ -236,32 +255,57 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .nav-actions .login {
+        .nav-actions .login-btn {
             color: var(--white);
             font-weight: 500;
             transition: var(--transition);
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
         }
 
-        .nav-actions .login:hover {
+        .nav-actions .login-btn:hover {
             color: var(--teal);
+            border-color: var(--teal);
         }
 
-        .nav-actions .btn-signup {
+        .nav-actions .signup-btn {
             background: var(--gold);
             color: var(--navy);
-            padding: 10px 24px;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 14px;
             transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
         }
 
-        .nav-actions .btn-signup:hover {
+        .nav-actions .signup-btn:hover {
             background: #e6c200;
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-actions .user-greeting {
+            color: var(--teal);
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-actions .user-greeting i {
+            font-size: 18px;
         }
 
         .menu-toggle {
@@ -269,6 +313,184 @@
             color: var(--white);
             font-size: 28px;
             cursor: pointer;
+        }
+
+        /* ============================================
+                   AUTH MODALS
+                   ============================================ */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .auth-modal.active {
+            display: flex;
+        }
+
+        .auth-modal-content {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            max-width: 420px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalSlide 0.4s ease;
+            position: relative;
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .auth-modal-content .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .auth-modal-content .modal-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--navy);
+        }
+
+        .auth-modal-content .modal-header h3 i {
+            color: var(--teal);
+            margin-right: 8px;
+        }
+
+        .auth-modal-content .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .auth-modal-content .modal-close:hover {
+            color: var(--red);
+            transform: rotate(90deg);
+        }
+
+        .auth-modal-content .form-group {
+            margin-bottom: 16px;
+        }
+
+        .auth-modal-content .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .auth-modal-content .form-group label .required {
+            color: var(--red);
+        }
+
+        .auth-modal-content .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .auth-modal-content .form-group input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.15);
+        }
+
+        .auth-modal-content .btn-auth {
+            width: 100%;
+            padding: 14px;
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            margin-top: 8px;
+        }
+
+        .auth-modal-content .btn-auth:hover {
+            background: var(--teal);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .auth-modal-content .auth-switch {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .auth-modal-content .auth-switch a {
+            color: var(--teal);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .auth-modal-content .auth-switch a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-modal-content .auth-error {
+            background: rgba(229, 62, 62, 0.10);
+            border: 1px solid var(--red);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            color: var(--red);
+            font-size: 14px;
+            display: none;
+        }
+
+        .auth-modal-content .auth-error.active {
+            display: block;
+        }
+
+        .auth-modal-content .auth-success {
+            background: rgba(72, 187, 120, 0.10);
+            border: 1px solid var(--green);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            color: var(--green);
+            font-size: 14px;
+            display: none;
+        }
+
+        .auth-modal-content .auth-success.active {
+            display: block;
         }
 
         /* ============================================
@@ -370,6 +592,10 @@
             border-radius: var(--radius);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
         }
 
         /* ============================================
@@ -476,6 +702,11 @@
             color: var(--navy);
         }
 
+        .section-header span {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
         .job-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -567,7 +798,7 @@
             width: 100%;
             height: 100%;
             background: rgba(10, 25, 47, 0.85);
-            z-index: 9999;
+            z-index: 9998;
             align-items: center;
             justify-content: center;
             padding: 20px;
@@ -581,22 +812,11 @@
             background: var(--white);
             border-radius: var(--radius);
             padding: 40px;
-            max-width: 550px;
+            max-width: 600px;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
             animation: modalSlide 0.4s ease;
-        }
-
-        @keyframes modalSlide {
-            from {
-                transform: translateY(-30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .apply-modal-content .modal-header {
@@ -629,6 +849,7 @@
 
         .apply-modal-content .modal-close:hover {
             color: var(--red);
+            transform: rotate(90deg);
         }
 
         .apply-modal-content .job-preview {
@@ -698,6 +919,56 @@
             resize: vertical;
         }
 
+        .apply-modal-content .form-group .file-upload-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .apply-modal-content .form-group .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .apply-modal-content .form-group .file-upload-label {
+            display: block;
+            padding: 12px 16px;
+            border: 2px dashed #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 14px;
+            transition: var(--transition);
+            background: var(--white);
+            cursor: pointer;
+        }
+
+        .apply-modal-content .form-group .file-upload-label:hover {
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .apply-modal-content .form-group .file-upload-label i {
+            margin-right: 8px;
+        }
+
+        .apply-modal-content .form-group .file-name {
+            display: none;
+            font-size: 13px;
+            color: var(--green);
+            margin-top: 4px;
+        }
+
+        .apply-modal-content .form-group .file-name.active {
+            display: block;
+        }
+
         .apply-modal-content .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -723,7 +994,10 @@
             margin-right: 6px;
         }
 
-        /* Success Message */
+        .apply-modal-content .form-note p strong {
+            color: var(--teal);
+        }
+
         .success-message {
             display: none;
             text-align: center;
@@ -798,6 +1072,12 @@
             border-radius: var(--radius);
             padding: 32px 28px;
             box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(10, 25, 47, 0.15);
         }
 
         .testimonial-card .quote {
@@ -997,11 +1277,23 @@
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             transition: var(--transition);
             z-index: 999;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 40px rgba(37, 211, 102, 0.7);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
         }
 
         /* ============================================
@@ -1221,6 +1513,15 @@
                 flex-direction: column;
                 align-items: stretch;
             }
+
+            .nav-actions .login-btn {
+                display: none;
+            }
+
+            .auth-modal-content {
+                padding: 24px;
+                margin: 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1268,9 +1569,13 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <div class="nav-actions">
-                <a href="#" class="login">Log In</a>
-                <a href="#jobs" class="btn-signup">Find Jobs</a>
+            <div class="nav-actions" id="navActions">
+                <button class="login-btn" onclick="openLogin()">
+                    <i class="fas fa-sign-in-alt"></i> Log In
+                </button>
+                <button class="signup-btn" onclick="openSignup()">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -1294,7 +1599,7 @@
                 <h1>Find Your Next <br /><span>Writing Job</span> Today.</h1>
                 <p>
                     Browse hundreds of premium writing jobs from top clients worldwide.
-                    See full job details, rates, and requirements — then apply directly.
+                    Sign up for free, apply instantly, and start your freelance career.
                 </p>
                 <div class="hero-buttons">
                     <a href="#jobs" class="btn-primary"><i class="fas fa-briefcase"></i> Browse Jobs</a>
@@ -1332,23 +1637,23 @@
             <div class="steps-grid">
                 <div class="step-card">
                     <span class="step-number">01</span>
+                    <span class="step-icon"><i class="fas fa-user-plus"></i></span>
+                    <h3>Create Account</h3>
+                    <p>Sign up for free with your email and start exploring jobs.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">02</span>
                     <span class="step-icon"><i class="fas fa-search"></i></span>
                     <h3>Browse Jobs</h3>
                     <p>Explore hundreds of writing jobs from top companies worldwide.</p>
                 </div>
 
                 <div class="step-card">
-                    <span class="step-number">02</span>
-                    <span class="step-icon"><i class="fas fa-paper-plane"></i></span>
-                    <h3>Apply Online</h3>
-                    <p>Fill out the application form with your details and experience.</p>
-                </div>
-
-                <div class="step-card">
                     <span class="step-number">03</span>
-                    <span class="step-icon"><i class="fas fa-envelope-open-text"></i></span>
-                    <h3>Get Response</h3>
-                    <p>We review your application and respond within 24-48 hours.</p>
+                    <span class="step-icon"><i class="fas fa-paper-plane"></i></span>
+                    <h3>Apply & Get Hired</h3>
+                    <p>Submit your application with work samples and get a response.</p>
                 </div>
             </div>
         </div>
@@ -1361,7 +1666,7 @@
         <div class="container">
             <div class="section-header">
                 <h2><i class="fas fa-briefcase" style="color: var(--teal);"></i> Available Writing Jobs</h2>
-                <span style="color: var(--gray); font-size: 14px;">Updated daily</span>
+                <span>Updated daily</span>
             </div>
 
             <div class="job-grid">
@@ -1432,78 +1737,6 @@
                     <div class="job-footer">
                         <span class="job-type">💻 Tech</span>
                         <button class="btn-apply" onclick="openApplyModal('Technical Writer', '$55/hr', 'Remote • Contract')">
-                            <i class="fas fa-paper-plane"></i> Apply Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Job 5 -->
-                <div class="job-card">
-                    <div class="job-title">Ghostwriter</div>
-                    <div class="job-meta">Remote • Freelance</div>
-                    <div class="job-rate">$70 / hr</div>
-                    <div class="job-stars">★★★★☆ <span>(9 reviews)</span></div>
-                    <div class="job-description">
-                        Seeking an experienced ghostwriter for a leadership book project. 
-                        Must have experience writing in the business/leadership niche.
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-type">📖 Ghost</span>
-                        <button class="btn-apply" onclick="openApplyModal('Ghostwriter', '$70/hr', 'Remote • Freelance')">
-                            <i class="fas fa-paper-plane"></i> Apply Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Job 6 -->
-                <div class="job-card">
-                    <div class="job-title">Social Media Writer</div>
-                    <div class="job-meta">Remote • Part-time</div>
-                    <div class="job-rate">$35 / hr</div>
-                    <div class="job-stars">★★★★☆ <span>(14 reviews)</span></div>
-                    <div class="job-description">
-                        Create engaging social media captions, threads, and content calendars 
-                        for a growing lifestyle brand across Instagram, Twitter, and LinkedIn.
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-type">📱 Social</span>
-                        <button class="btn-apply" onclick="openApplyModal('Social Media Writer', '$35/hr', 'Remote • Part-time')">
-                            <i class="fas fa-paper-plane"></i> Apply Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Job 7 -->
-                <div class="job-card">
-                    <div class="job-title">Product Description Writer</div>
-                    <div class="job-meta">Remote • Full-time</div>
-                    <div class="job-rate">$45 / hr</div>
-                    <div class="job-stars">★★★★★ <span>(22 reviews)</span></div>
-                    <div class="job-description">
-                        Write compelling product descriptions for an e-commerce store. 
-                        Must be able to write persuasive copy that drives conversions.
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-type">🛍️ Ecom</span>
-                        <button class="btn-apply" onclick="openApplyModal('Product Description Writer', '$45/hr', 'Remote • Full-time')">
-                            <i class="fas fa-paper-plane"></i> Apply Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Job 8 -->
-                <div class="job-card">
-                    <div class="job-title">Newsletter Writer</div>
-                    <div class="job-meta">Remote • Freelance</div>
-                    <div class="job-rate">$50 / hr</div>
-                    <div class="job-stars">★★★★☆ <span>(16 reviews)</span></div>
-                    <div class="job-description">
-                        Create weekly newsletters for a finance and investing publication. 
-                        Must be able to simplify complex topics for a general audience.
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-type">📧 Newsletter</span>
-                        <button class="btn-apply" onclick="openApplyModal('Newsletter Writer', '$50/hr', 'Remote • Freelance')">
                             <i class="fas fa-paper-plane"></i> Apply Now
                         </button>
                     </div>
@@ -1648,6 +1881,71 @@
     </section>
 
     <!-- ==========================================
+    SIGNUP MODAL
+    ========================================== -->
+    <div class="auth-modal" id="signupModal">
+        <div class="auth-modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Create Account</h3>
+                <button class="modal-close" onclick="closeSignup()">&times;</button>
+            </div>
+
+            <div class="auth-error" id="signupError"></div>
+            <div class="auth-success" id="signupSuccess">Account created successfully! Please log in.</div>
+
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name <span class="required">*</span></label>
+                    <input type="text" id="signupName" placeholder="e.g. John Doe" required />
+                </div>
+                <div class="form-group">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" id="signupEmail" placeholder="you@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Password <span class="required">*</span></label>
+                    <input type="password" id="signupPassword" placeholder="Min 6 characters" required minlength="6" />
+                </div>
+                <button type="submit" class="btn-auth"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </form>
+
+            <div class="auth-switch">
+                Already have an account? <a onclick="switchToLogin()">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    LOGIN MODAL
+    ========================================== -->
+    <div class="auth-modal" id="loginModal">
+        <div class="auth-modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-sign-in-alt"></i> Log In</h3>
+                <button class="modal-close" onclick="closeLogin()">&times;</button>
+            </div>
+
+            <div class="auth-error" id="loginError"></div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" id="loginEmail" placeholder="you@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Password <span class="required">*</span></label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" class="btn-auth"><i class="fas fa-sign-in-alt"></i> Log In</button>
+            </form>
+
+            <div class="auth-switch">
+                Don't have an account? <a onclick="switchToSignup()">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
     APPLICATION MODAL
     ========================================== -->
     <div class="apply-modal" id="applyModal">
@@ -1657,15 +1955,13 @@
                 <button class="modal-close" onclick="closeApplyModal()">&times;</button>
             </div>
 
-            <!-- Job Preview -->
             <div class="job-preview" id="jobPreview">
                 <div class="job-title-preview" id="modalJobTitle">Blog Writer</div>
                 <div class="job-rate-preview" id="modalJobRate">$50 / post</div>
                 <div class="job-meta-preview" id="modalJobMeta">Remote • Full-time</div>
             </div>
 
-            <!-- Application Form -->
-            <form id="applicationForm" onsubmit="submitApplication(event)">
+            <form id="applicationForm" onsubmit="submitApplication(event)" enctype="multipart/form-data">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Full Name <span class="required">*</span></label>
@@ -1683,8 +1979,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Years of Experience</label>
-                    <select id="applicantExperience">
+                    <label>Years of Experience <span class="required">*</span></label>
+                    <select id="applicantExperience" required>
+                        <option value="">— Select —</option>
                         <option value="0-1">0-1 year</option>
                         <option value="1-3">1-3 years</option>
                         <option value="3-5">3-5 years</option>
@@ -1694,17 +1991,48 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Why are you a good fit for this role? <span class="required">*</span></label>
-                    <textarea id="applicantMessage" placeholder="Tell us about your experience, skills, and why you're interested..." required></textarea>
+                    <label>Writing Niche / Specialty <span class="required">*</span></label>
+                    <select id="applicantNiche" required>
+                        <option value="">— Select —</option>
+                        <option value="Blog Writing">Blog Writing</option>
+                        <option value="SEO Writing">SEO Writing</option>
+                        <option value="Copywriting">Copywriting</option>
+                        <option value="Technical Writing">Technical Writing</option>
+                        <option value="Academic Writing">Academic Writing</option>
+                        <option value="Creative Writing">Creative Writing</option>
+                        <option value="Ghostwriting">Ghostwriting</option>
+                        <option value="Social Media Writing">Social Media Writing</option>
+                        <option value="Product Descriptions">Product Descriptions</option>
+                        <option value="Newsletter Writing">Newsletter Writing</option>
+                        <option value="Editing & Proofreading">Editing & Proofreading</option>
+                        <option value="Resume & CV Writing">Resume & CV Writing</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Portfolio / Writing Samples (Links)</label>
-                    <input type="text" id="applicantPortfolio" placeholder="e.g. https://yourportfolio.com or https://medium.com/@you" />
+                    <label>Upload Work Sample <span class="required">*</span></label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="applicantFile" accept=".pdf,.doc,.docx,.txt,.rtf" required />
+                        <div class="file-upload-label" id="fileUploadLabel">
+                            <i class="fas fa-cloud-upload-alt"></i> Click to upload your work sample (PDF, DOC, TXT)
+                        </div>
+                    </div>
+                    <div class="file-name" id="fileName">✅ File selected: <span id="fileNameText"></span></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Why are you a good fit for this role? <span class="required">*</span></label>
+                    <textarea id="applicantMessage" placeholder="Tell us about your experience, skills, and why you're interested in this specific job..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Portfolio / Additional Links</label>
+                    <input type="text" id="applicantPortfolio" placeholder="e.g. https://yourportfolio.com, https://medium.com/@you" />
                 </div>
 
                 <div class="form-note">
-                    <p><i class="fas fa-info-circle"></i> Your application will be sent directly to our hiring team. We'll review it and get back to you within 24-48 hours.</p>
+                    <p><i class="fas fa-info-circle"></i> Your application will be sent to <strong>fabianwhites31@gmail.com</strong>. We'll review your work sample and experience, then get back to you within 24-48 hours.</p>
                 </div>
 
                 <button type="submit" class="btn-submit-application">
@@ -1712,7 +2040,6 @@
                 </button>
             </form>
 
-            <!-- Success Message -->
             <div class="success-message" id="successMessage">
                 <i class="fas fa-check-circle"></i>
                 <h3>Application Submitted!</h3>
@@ -1721,12 +2048,15 @@
                     <p><strong>Job:</strong> <span id="successJobTitle">Blog Writer</span></p>
                     <p><strong>Applicant:</strong> <span id="successName">John Doe</span></p>
                     <p><strong>Email:</strong> <span id="successEmail">john@email.com</span></p>
+                    <p><strong>Experience:</strong> <span id="successExperience">3-5 years</span></p>
+                    <p><strong>Niche:</strong> <span id="successNiche">Blog Writing</span></p>
+                    <p><strong>Work Sample:</strong> <span id="successFile">filename.pdf</span></p>
                 </div>
                 <p style="font-size: 14px; color: var(--gray);">
                     <i class="fas fa-clock"></i> We'll review your application and respond within 24-48 hours.
                 </p>
                 <br />
-                <button class="btn-close-modal" onclick="closeApplyModal()" style="background: var(--navy); color: white; padding: 12px 36px; border-radius: 50px; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600;">
+                <button onclick="closeApplyModal()" style="background: var(--navy); color: white; padding: 12px 36px; border-radius: 50px; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600;">
                     Close
                 </button>
             </div>
@@ -1748,7 +2078,7 @@
                     <a href="#" class="logo">
                         <i class="fas fa-pen-fancy"></i> Writer<span>Net</span>
                     </a>
-                    <p>Find your next writing job. Browse, apply, and start earning today.</p>
+                    <p>Find your next writing job. Sign up, apply, and start earning today.</p>
                     <br />
                     <p style="font-size: 13px; color: var(--gray);">
                         <i class="fas fa-envelope" style="color: var(--teal);"></i> fabianwhites31@gmail.com<br />
@@ -1802,7 +2132,9 @@
     JAVASCRIPT
     ========================================== -->
     <script>
-        // Mobile Menu Toggle
+        // ============================================
+        // MOBILE MENU
+        // ============================================
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -1816,23 +2148,218 @@
             });
         });
 
-        // Application Modal Functions
+        // ============================================
+        // FILE UPLOAD
+        // ============================================
+        document.getElementById('applicantFile').addEventListener('change', function(e) {
+            const file = this.files[0];
+            const fileName = document.getElementById('fileName');
+            const fileNameText = document.getElementById('fileNameText');
+            
+            if (file) {
+                fileNameText.textContent = file.name;
+                fileName.classList.add('active');
+            } else {
+                fileName.classList.remove('active');
+            }
+        });
+
+        // ============================================
+        // AUTH SYSTEM
+        // ============================================
+
+        function checkAuth() {
+            const user = localStorage.getItem('writerNetUser');
+            if (user) {
+                const userData = JSON.parse(user);
+                showLoggedInState(userData.name);
+            }
+        }
+
+        function showLoggedInState(name) {
+            const navActions = document.getElementById('navActions');
+            navActions.innerHTML = `
+                <span class="user-greeting">
+                    <i class="fas fa-user-circle"></i> Welcome, ${name}
+                    <button class="btn-logout" onclick="handleLogout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </span>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            `;
+            
+            const newMenuToggle = document.getElementById('menuToggle');
+            newMenuToggle.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.toggle('open');
+            });
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('signupName').value.trim();
+            const email = document.getElementById('signupEmail').value.trim();
+            const password = document.getElementById('signupPassword').value;
+            
+            const errorEl = document.getElementById('signupError');
+            const successEl = document.getElementById('signupSuccess');
+            
+            errorEl.classList.remove('active');
+            successEl.classList.remove('active');
+            
+            if (!name || !email || !password) {
+                errorEl.textContent = 'Please fill in all fields.';
+                errorEl.classList.add('active');
+                return;
+            }
+            
+            if (password.length < 6) {
+                errorEl.textContent = 'Password must be at least 6 characters.';
+                errorEl.classList.add('active');
+                return;
+            }
+            
+            const users = JSON.parse(localStorage.getItem('writerNetUsers') || '[]');
+            if (users.find(u => u.email === email)) {
+                errorEl.textContent = 'This email is already registered. Please log in.';
+                errorEl.classList.add('active');
+                return;
+            }
+            
+            users.push({ name, email, password });
+            localStorage.setItem('writerNetUsers', JSON.stringify(users));
+            
+            successEl.classList.add('active');
+            
+            document.getElementById('signupName').value = '';
+            document.getElementById('signupEmail').value = '';
+            document.getElementById('signupPassword').value = '';
+            
+            setTimeout(() => {
+                closeSignup();
+                openLogin();
+            }, 1500);
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            
+            const errorEl = document.getElementById('loginError');
+            errorEl.classList.remove('active');
+            
+            if (!email || !password) {
+                errorEl.textContent = 'Please fill in all fields.';
+                errorEl.classList.add('active');
+                return;
+            }
+            
+            const users = JSON.parse(localStorage.getItem('writerNetUsers') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (!user) {
+                errorEl.textContent = 'Invalid email or password. Please try again.';
+                errorEl.classList.add('active');
+                return;
+            }
+            
+            localStorage.setItem('writerNetUser', JSON.stringify({ name: user.name, email: user.email }));
+            
+            closeLogin();
+            showLoggedInState(user.name);
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('writerNetUser');
+            location.reload();
+        }
+
+        function openSignup() {
+            closeLogin();
+            document.getElementById('signupModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('signupError').classList.remove('active');
+            document.getElementById('signupSuccess').classList.remove('active');
+        }
+
+        function closeSignup() {
+            document.getElementById('signupModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openLogin() {
+            closeSignup();
+            document.getElementById('loginModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('loginError').classList.remove('active');
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchToLogin() {
+            closeSignup();
+            openLogin();
+        }
+
+        function switchToSignup() {
+            closeLogin();
+            openSignup();
+        }
+
+        document.getElementById('signupModal').addEventListener('click', function(e) {
+            if (e.target === this) closeSignup();
+        });
+        
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) closeLogin();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSignup();
+                closeLogin();
+            }
+        });
+
+        // ============================================
+        // APPLICATION MODAL
+        // ============================================
         let currentJob = {};
 
         function openApplyModal(title, rate, meta) {
+            const user = localStorage.getItem('writerNetUser');
+            if (!user) {
+                alert('Please sign up or log in first to apply for jobs.');
+                openSignup();
+                return;
+            }
+            
             currentJob = { title, rate, meta };
             
             document.getElementById('modalJobTitle').textContent = title;
             document.getElementById('modalJobRate').textContent = rate;
             document.getElementById('modalJobMeta').textContent = meta;
             
+            const userData = JSON.parse(user);
+            document.getElementById('applicantName').value = userData.name || '';
+            document.getElementById('applicantEmail').value = userData.email || '';
+            
             document.getElementById('applyModal').classList.add('active');
             document.body.style.overflow = 'hidden';
             
-            // Reset form
             document.getElementById('applicationForm').style.display = 'block';
             document.getElementById('successMessage').classList.remove('active');
-            document.getElementById('applicationForm').reset();
+            
+            // Reset file upload
+            document.getElementById('applicantFile').value = '';
+            document.getElementById('fileName').classList.remove('active');
         }
 
         function closeApplyModal() {
@@ -1840,21 +2367,17 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         document.getElementById('applyModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeApplyModal();
-            }
+            if (e.target === this) closeApplyModal();
         });
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeApplyModal();
-            }
+            if (e.key === 'Escape') closeApplyModal();
         });
 
-        // Submit Application
+        // ============================================
+        // SUBMIT APPLICATION
+        // ============================================
         function submitApplication(e) {
             e.preventDefault();
             
@@ -1862,16 +2385,22 @@
             const email = document.getElementById('applicantEmail').value.trim();
             const phone = document.getElementById('applicantPhone').value.trim();
             const experience = document.getElementById('applicantExperience').value;
+            const niche = document.getElementById('applicantNiche').value;
             const message = document.getElementById('applicantMessage').value.trim();
             const portfolio = document.getElementById('applicantPortfolio').value.trim();
+            const fileInput = document.getElementById('applicantFile');
+            const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file uploaded';
             
-            // Validate required fields
-            if (!name || !email || !phone || !message) {
+            if (!name || !email || !phone || !message || !experience || !niche) {
                 alert('Please fill in all required fields.');
                 return;
             }
             
-            // Build email body
+            if (fileInput.files.length === 0) {
+                alert('Please upload a work sample (PDF, DOC, or TXT file).');
+                return;
+            }
+            
             const subject = `Job Application: ${currentJob.title}`;
             const body = `
         ============================================
@@ -1889,34 +2418,38 @@
         Full Name: ${name}
         Email: ${email}
         Phone: ${phone}
-        Experience: ${experience}
+        Years of Experience: ${experience}
+        Writing Niche: ${niche}
+        Portfolio: ${portfolio || 'Not provided'}
+        Work Sample: ${fileName} (attached)
         
         APPLICATION MESSAGE:
         -------------------
         ${message}
-        
-        PORTFOLIO LINK:
-        ---------------
-        ${portfolio || 'Not provided'}
         
         ============================================
         Respond to this applicant at: ${email}
         ============================================
             `;
             
-            // Send email via mailto
             const mailtoLink = `mailto:fabianwhites31@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
-            // Open email client
             window.location.href = mailtoLink;
             
-            // Show success message
             document.getElementById('applicationForm').style.display = 'none';
             document.getElementById('successMessage').classList.add('active');
             document.getElementById('successJobTitle').textContent = currentJob.title;
             document.getElementById('successName').textContent = name;
             document.getElementById('successEmail').textContent = email;
+            document.getElementById('successExperience').textContent = experience;
+            document.getElementById('successNiche').textContent = niche;
+            document.getElementById('successFile').textContent = fileName;
         }
+
+        // ============================================
+        // INIT
+        // ============================================
+        checkAuth();
     </script>
 
 </body>
